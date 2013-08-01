@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PartPrograms>
+  <PartProgram
+    barcode="abcd1234"
+    programFilename="ABC.MIN"
+    programPath="D:\MD1"
+    setupFilename="ABC.MIN.mpg"
+    setupPath="D:\MD1"
+    thumbnailFilename="ABC.MIN.png"
+    thumbnailPath="D:\MD1"
+    />
+  <PartProgram
+  barcode="abba"
+  programFilename="ABBA.MIN">
+    <Description>abba 1234 abba 1234</Description>
+  </PartProgram>
+  <PartProgram
+  barcode="zyxw9876"
+  programFilename="ZYX.MIN"
+  setupFilename="ZYX.MIN.mpg"
+  thumbnailFilename="ZYX.MIN.png"
+    />
+  <PartProgram
+  barcode="aardvark"
+  programFilename="AARDVARK.MIN"
+  programPath="D:\MD1"
+  thumbnailFilename="AARDVARK.MIN.png"
+  thumbnailPath="D:\MD1"
+    />
+  <PartProgram
+  barcode="zyxz"
+  programFilename="ZYXZ.MIN"
+  programPath="D:\MD1"
+  thumbnailFilename="ZYXZ.MIN.png"
+  thumbnailPath="D:\MD1"
+    />
+  <PartProgram
+  barcode="abcd2468"
+  programFilename="ABC2.MIN"
+  programPath="D:\MD1"
+  setupFilename="ABC2.MIN.mpg"
+  setupPath="D:\MD1"
+  thumbnailFilename="ABC2.MIN.png"
+  thumbnailPath="D:\MD1">
+    <Description>ABC Widget, second program.</Description>
+  </PartProgram>
+</PartPrograms>
