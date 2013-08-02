@@ -42,6 +42,10 @@ namespace BarcodeLoader
         /// This defaults to <see cref="StringComparison.OrdinalIgnoreCase"/> for case-insensitive barcode matches.</remarks>
         private StringComparison _comparison = StringComparison.OrdinalIgnoreCase;
 
+        /// <summary>The <see cref="IProgram"/> interface to use for part program loading.
+        /// </summary>
+        private IProgram _program;
+
         /// <summary>Answers an array of part programs that match the provided text.
         /// </summary>
         /// <param name="text">The text to match.</param>
@@ -127,16 +131,42 @@ namespace BarcodeLoader
         /// <param name="program"></param>
         private void LoadPartProgram(PartProgram program)
         {
-            MessageBox.Show("Loaded part program \"" + program.ProgramFilename + "\".");
-            //TODO: actual part program load
 
+            try
+            {
+                string path = Path.Combine(program.ProgramPath ?? "", program.ProgramFilename ?? "");
+                //FIXME: default to D:\MD1 (or default path from IProgram) if path not specified
+                //FIXME: if file not in D:\MD1, copy with appropriate prompting or other configurable action
+                if (program.ScheduleProgram)
+                {
+                    _program.SelectScheduleProgram(path);
+                }
+                else
+                {
+                    _program.SelectMainProgram(path);
+                }
+
+                PromptSetup(program);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, "Unable to load file \"" + program.ProgramFilename + "\". Error message: " + ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                BarcodeTextBox.Focus();
+            }
+        }
+
+        private void PromptSetup(PartProgram program)
+        {
             if (program.SetupFilename != null)
             {
                 string setupPath = Path.Combine(program.SetupPath ?? "", program.SetupFilename ?? "");
 
                 if(PromptPlayRadio.Checked)
                 {       
-                    if (MessageBox.Show("Do you want to play the setup video for this part program?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
+                    if (MessageBox.Show(this, "Do you want to play the setup video for this part program?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
                             PlayVideo(setupPath);
                 }
                 else if(AutoPlayRadio.Checked)
@@ -144,8 +174,6 @@ namespace BarcodeLoader
                     PlayVideo(setupPath);
                 }
             }
-
-            BarcodeTextBox.Focus();
         }
 
         /// <summary>Plays the given file using the default shell handler. 
@@ -166,6 +194,19 @@ namespace BarcodeLoader
         public MainForm()
         {
             InitializeComponent();
+
+            if (File.Exists(@"C:\OSP-P\VOLANTE\IMAGES\LATHE.DLL"))
+            {
+                _program = new LatheProgram();
+            }
+            else if (File.Exists(@"C:\OSP-P\VOLANTE\IMAGES\MC.DLL"))
+            {
+                _program = new MillProgram();
+            }
+            else
+            {
+                _program = new TestProgram();
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)

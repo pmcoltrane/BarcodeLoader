@@ -62,6 +62,10 @@ namespace BarcodeLoader
         /// </summary>
         private string _description;
 
+        /// <summary>Indicates whether this is a schedule program.
+        /// </summary>
+        private bool _scheduleProgram;
+
         /// <summary>A barcode that maps to this part program.
         /// </summary>
         private string _barcode;
@@ -93,6 +97,22 @@ namespace BarcodeLoader
             XAttribute descriptionAttr = element.Attribute("description");
 
             _description = (string)descriptionElem ?? (string)descriptionAttr;
+
+            XAttribute scheduleAttr = element.Attribute("schedule");
+            if(scheduleAttr==null)
+            {
+                _scheduleProgram = false;
+            }
+            else if(String.IsNullOrWhiteSpace(scheduleAttr.Value))
+            {
+                _scheduleProgram = false;
+            }
+            else
+            {
+                if(!bool.TryParse(scheduleAttr.Value, out _scheduleProgram)) _scheduleProgram = false;
+            }
+
+
 
         }
 
@@ -127,6 +147,10 @@ namespace BarcodeLoader
         /// <summary>Answers the barcode text to match.
         /// </summary>
         public string Barcode { get { return _barcode; } }
+
+        /// <summary>Answers whether this is a schedule program.
+        /// </summary>
+        public bool ScheduleProgram { get { return _scheduleProgram; } }
 
         #endregion
 
