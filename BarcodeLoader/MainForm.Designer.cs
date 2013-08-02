@@ -41,12 +41,16 @@
             this.AdvancedPage = new System.Windows.Forms.TabPage();
             this.CaseSensitiveCheckBox = new System.Windows.Forms.CheckBox();
             this.AutoLoadCheckBox = new System.Windows.Forms.CheckBox();
-            this.PlaySetupCheckBox = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.AutoPlayRadio = new System.Windows.Forms.RadioButton();
+            this.PromptPlayRadio = new System.Windows.Forms.RadioButton();
+            this.NoPlayRadio = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.BarcodePage.SuspendLayout();
             this.NonePanel.SuspendLayout();
             this.MultiplePanel.SuspendLayout();
             this.AdvancedPage.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -161,7 +165,7 @@
             // 
             // AdvancedPage
             // 
-            this.AdvancedPage.Controls.Add(this.PlaySetupCheckBox);
+            this.AdvancedPage.Controls.Add(this.groupBox1);
             this.AdvancedPage.Controls.Add(this.CaseSensitiveCheckBox);
             this.AdvancedPage.Controls.Add(this.AutoLoadCheckBox);
             this.AdvancedPage.Location = new System.Drawing.Point(4, 22);
@@ -193,15 +197,49 @@
             this.AutoLoadCheckBox.Text = "Automatically load part program when selected (may cause undesirable behavior)";
             this.AutoLoadCheckBox.UseVisualStyleBackColor = true;
             // 
-            // PlaySetupCheckBox
+            // groupBox1
             // 
-            this.PlaySetupCheckBox.AutoSize = true;
-            this.PlaySetupCheckBox.Location = new System.Drawing.Point(8, 126);
-            this.PlaySetupCheckBox.Name = "PlaySetupCheckBox";
-            this.PlaySetupCheckBox.Size = new System.Drawing.Size(260, 17);
-            this.PlaySetupCheckBox.TabIndex = 2;
-            this.PlaySetupCheckBox.Text = "Prompt to play setup video instead of auto-playing";
-            this.PlaySetupCheckBox.UseVisualStyleBackColor = true;
+            this.groupBox1.Controls.Add(this.NoPlayRadio);
+            this.groupBox1.Controls.Add(this.PromptPlayRadio);
+            this.groupBox1.Controls.Add(this.AutoPlayRadio);
+            this.groupBox1.Location = new System.Drawing.Point(8, 113);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(396, 148);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "If a setup video is available...";
+            // 
+            // AutoPlayRadio
+            // 
+            this.AutoPlayRadio.AutoSize = true;
+            this.AutoPlayRadio.Checked = true;
+            this.AutoPlayRadio.Location = new System.Drawing.Point(6, 31);
+            this.AutoPlayRadio.Name = "AutoPlayRadio";
+            this.AutoPlayRadio.Size = new System.Drawing.Size(271, 17);
+            this.AutoPlayRadio.TabIndex = 0;
+            this.AutoPlayRadio.TabStop = true;
+            this.AutoPlayRadio.Text = "Play it automatically when the part program is loaded";
+            this.AutoPlayRadio.UseVisualStyleBackColor = true;
+            // 
+            // PromptPlayRadio
+            // 
+            this.PromptPlayRadio.AutoSize = true;
+            this.PromptPlayRadio.Location = new System.Drawing.Point(6, 73);
+            this.PromptPlayRadio.Name = "PromptPlayRadio";
+            this.PromptPlayRadio.Size = new System.Drawing.Size(280, 17);
+            this.PromptPlayRadio.TabIndex = 1;
+            this.PromptPlayRadio.Text = "Ask whether to play it when the part program is loaded";
+            this.PromptPlayRadio.UseVisualStyleBackColor = true;
+            // 
+            // NoPlayRadio
+            // 
+            this.NoPlayRadio.AutoSize = true;
+            this.NoPlayRadio.Location = new System.Drawing.Point(6, 115);
+            this.NoPlayRadio.Name = "NoPlayRadio";
+            this.NoPlayRadio.Size = new System.Drawing.Size(311, 17);
+            this.NoPlayRadio.TabIndex = 2;
+            this.NoPlayRadio.Text = "Do not play any setup video when the part program is loaded";
+            this.NoPlayRadio.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -222,6 +260,8 @@
             this.MultiplePanel.ResumeLayout(false);
             this.AdvancedPage.ResumeLayout(false);
             this.AdvancedPage.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -240,7 +280,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox CaseSensitiveCheckBox;
         private System.Windows.Forms.CheckBox AutoLoadCheckBox;
-        private System.Windows.Forms.CheckBox PlaySetupCheckBox;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton NoPlayRadio;
+        private System.Windows.Forms.RadioButton PromptPlayRadio;
+        private System.Windows.Forms.RadioButton AutoPlayRadio;
     }
 }
 

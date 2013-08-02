@@ -133,11 +133,13 @@ namespace BarcodeLoader
             if (program.SetupFilename != null)
             {
                 string setupPath = Path.Combine(program.SetupPath ?? "", program.SetupFilename ?? "");
-                if (PlaySetupCheckBox.Checked)
-                {
-                    if (MessageBox.Show("Do you want to play the setup video for this part program?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) PlayVideo(setupPath);
+
+                if(PromptPlayRadio.Checked)
+                {       
+                    if (MessageBox.Show("Do you want to play the setup video for this part program?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
+                            PlayVideo(setupPath);
                 }
-                else
+                else if(AutoPlayRadio.Checked)
                 {
                     PlayVideo(setupPath);
                 }
@@ -148,8 +150,14 @@ namespace BarcodeLoader
 
         private void PlayVideo(string path)
         {
-            MessageBox.Show("Played video \"" + path + "\".");
-            //TODO: actual play of video
+            try
+            {
+                System.Diagnostics.Process.Start(path); //NOTE: this will actually launch *any* file with its appropriate handler. Could be dangerous if the config file is compromised.
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(this, "Unable to play video. Error message: \"" + e.Message + "\".", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public MainForm()
