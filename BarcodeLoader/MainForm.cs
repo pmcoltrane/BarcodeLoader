@@ -148,6 +148,9 @@ namespace BarcodeLoader
             BarcodeTextBox.Focus();
         }
 
+        /// <summary>Plays the given file using the default shell handler. 
+        /// </summary>
+        /// <param name="path">The path to the file. This may be absolute or relative.</param>
         private void PlayVideo(string path)
         {
             try
