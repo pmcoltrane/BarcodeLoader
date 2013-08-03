@@ -35,16 +35,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Okuma.CLCMDAPI">
-      <HintPath>..\..\..\Documents\Work\THINC\Okuma.CLCMDAPI.dll</HintPath>
+      <HintPath>.\Okuma.CLCMDAPI.dll</HintPath>
     </Reference>
     <Reference Include="Okuma.CLDATAPI">
-      <HintPath>..\..\..\Documents\Work\THINC\Okuma.CLDATAPI.dll</HintPath>
+      <HintPath>.\Okuma.CLDATAPI.dll</HintPath>
     </Reference>
     <Reference Include="Okuma.CMCMDAPI">
-      <HintPath>..\..\..\Documents\Work\THINC\Okuma.CMCMDAPI.dll</HintPath>
+      <HintPath>.\Okuma.CMCMDAPI.dll</HintPath>
     </Reference>
     <Reference Include="Okuma.CMDATAPI">
-      <HintPath>..\..\..\Documents\Work\THINC\Okuma.CMDATAPI.dll</HintPath>
+      <HintPath>.\Okuma.CMDATAPI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

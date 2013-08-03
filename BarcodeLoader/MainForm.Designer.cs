@@ -39,23 +39,28 @@
             this.MultiplePanel = new System.Windows.Forms.Panel();
             this.MultipleLabel = new System.Windows.Forms.Label();
             this.AdvancedPage = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.NoPlayRadio = new System.Windows.Forms.RadioButton();
+            this.PromptPlayRadio = new System.Windows.Forms.RadioButton();
+            this.AutoPlayRadio = new System.Windows.Forms.RadioButton();
             this.CaseSensitiveCheckBox = new System.Windows.Forms.CheckBox();
             this.AutoLoadCheckBox = new System.Windows.Forms.CheckBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.AutoPlayRadio = new System.Windows.Forms.RadioButton();
-            this.PromptPlayRadio = new System.Windows.Forms.RadioButton();
-            this.NoPlayRadio = new System.Windows.Forms.RadioButton();
+            this.ConfigurationPage = new System.Windows.Forms.TabPage();
+            this.ConfigurationTable = new System.Windows.Forms.TableLayoutPanel();
+            this.AddButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.BarcodePage.SuspendLayout();
             this.NonePanel.SuspendLayout();
             this.MultiplePanel.SuspendLayout();
             this.AdvancedPage.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.ConfigurationPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.BarcodePage);
+            this.tabControl1.Controls.Add(this.ConfigurationPage);
             this.tabControl1.Controls.Add(this.AdvancedPage);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
@@ -81,9 +86,9 @@
             // 
             // PartProgramPanel
             // 
-            this.PartProgramPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PartProgramPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.PartProgramPanel.Location = new System.Drawing.Point(8, 64);
             this.PartProgramPanel.Name = "PartProgramPanel";
             this.PartProgramPanel.Size = new System.Drawing.Size(600, 264);
@@ -103,8 +108,8 @@
             // 
             // BarcodeTextBox
             // 
-            this.BarcodeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BarcodeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.BarcodeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BarcodeTextBox.Location = new System.Drawing.Point(6, 8);
             this.BarcodeTextBox.Name = "BarcodeTextBox";
@@ -115,9 +120,9 @@
             // 
             // NonePanel
             // 
-            this.NonePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.NonePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.NonePanel.Controls.Add(this.label1);
             this.NonePanel.Location = new System.Drawing.Point(8, 64);
             this.NonePanel.Name = "NonePanel";
@@ -127,9 +132,9 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(151, 105);
             this.label1.Name = "label1";
@@ -140,9 +145,9 @@
             // 
             // MultiplePanel
             // 
-            this.MultiplePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MultiplePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.MultiplePanel.Controls.Add(this.MultipleLabel);
             this.MultiplePanel.Location = new System.Drawing.Point(8, 64);
             this.MultiplePanel.Name = "MultiplePanel";
@@ -152,9 +157,9 @@
             // 
             // MultipleLabel
             // 
-            this.MultipleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MultipleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.MultipleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MultipleLabel.Location = new System.Drawing.Point(35, 105);
             this.MultipleLabel.Name = "MultipleLabel";
@@ -175,6 +180,50 @@
             this.AdvancedPage.TabIndex = 1;
             this.AdvancedPage.Text = "Advanced";
             this.AdvancedPage.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.NoPlayRadio);
+            this.groupBox1.Controls.Add(this.PromptPlayRadio);
+            this.groupBox1.Controls.Add(this.AutoPlayRadio);
+            this.groupBox1.Location = new System.Drawing.Point(8, 113);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(396, 148);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "If a setup video is available...";
+            // 
+            // NoPlayRadio
+            // 
+            this.NoPlayRadio.AutoSize = true;
+            this.NoPlayRadio.Location = new System.Drawing.Point(6, 115);
+            this.NoPlayRadio.Name = "NoPlayRadio";
+            this.NoPlayRadio.Size = new System.Drawing.Size(311, 17);
+            this.NoPlayRadio.TabIndex = 2;
+            this.NoPlayRadio.Text = "Do not play any setup video when the part program is loaded";
+            this.NoPlayRadio.UseVisualStyleBackColor = true;
+            // 
+            // PromptPlayRadio
+            // 
+            this.PromptPlayRadio.AutoSize = true;
+            this.PromptPlayRadio.Location = new System.Drawing.Point(6, 73);
+            this.PromptPlayRadio.Name = "PromptPlayRadio";
+            this.PromptPlayRadio.Size = new System.Drawing.Size(280, 17);
+            this.PromptPlayRadio.TabIndex = 1;
+            this.PromptPlayRadio.Text = "Ask whether to play it when the part program is loaded";
+            this.PromptPlayRadio.UseVisualStyleBackColor = true;
+            // 
+            // AutoPlayRadio
+            // 
+            this.AutoPlayRadio.AutoSize = true;
+            this.AutoPlayRadio.Checked = true;
+            this.AutoPlayRadio.Location = new System.Drawing.Point(6, 31);
+            this.AutoPlayRadio.Name = "AutoPlayRadio";
+            this.AutoPlayRadio.Size = new System.Drawing.Size(271, 17);
+            this.AutoPlayRadio.TabIndex = 0;
+            this.AutoPlayRadio.TabStop = true;
+            this.AutoPlayRadio.Text = "Play it automatically when the part program is loaded";
+            this.AutoPlayRadio.UseVisualStyleBackColor = true;
             // 
             // CaseSensitiveCheckBox
             // 
@@ -197,49 +246,39 @@
             this.AutoLoadCheckBox.Text = "Automatically load part program when selected (may cause undesirable behavior)";
             this.AutoLoadCheckBox.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // ConfigurationPage
             // 
-            this.groupBox1.Controls.Add(this.NoPlayRadio);
-            this.groupBox1.Controls.Add(this.PromptPlayRadio);
-            this.groupBox1.Controls.Add(this.AutoPlayRadio);
-            this.groupBox1.Location = new System.Drawing.Point(8, 113);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(396, 148);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "If a setup video is available...";
+            this.ConfigurationPage.Controls.Add(this.AddButton);
+            this.ConfigurationPage.Controls.Add(this.ConfigurationTable);
+            this.ConfigurationPage.Location = new System.Drawing.Point(4, 22);
+            this.ConfigurationPage.Name = "ConfigurationPage";
+            this.ConfigurationPage.Size = new System.Drawing.Size(616, 336);
+            this.ConfigurationPage.TabIndex = 2;
+            this.ConfigurationPage.Text = "Configuration";
+            this.ConfigurationPage.UseVisualStyleBackColor = true;
             // 
-            // AutoPlayRadio
+            // ConfigurationTable
             // 
-            this.AutoPlayRadio.AutoSize = true;
-            this.AutoPlayRadio.Checked = true;
-            this.AutoPlayRadio.Location = new System.Drawing.Point(6, 31);
-            this.AutoPlayRadio.Name = "AutoPlayRadio";
-            this.AutoPlayRadio.Size = new System.Drawing.Size(271, 17);
-            this.AutoPlayRadio.TabIndex = 0;
-            this.AutoPlayRadio.TabStop = true;
-            this.AutoPlayRadio.Text = "Play it automatically when the part program is loaded";
-            this.AutoPlayRadio.UseVisualStyleBackColor = true;
+            this.ConfigurationTable.AutoScroll = true;
+            this.ConfigurationTable.ColumnCount = 2;
+            this.ConfigurationTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.ConfigurationTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.ConfigurationTable.Location = new System.Drawing.Point(3, 3);
+            this.ConfigurationTable.Name = "ConfigurationTable";
+            this.ConfigurationTable.RowCount = 1;
+            this.ConfigurationTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.ConfigurationTable.Size = new System.Drawing.Size(610, 272);
+            this.ConfigurationTable.TabIndex = 0;
             // 
-            // PromptPlayRadio
+            // AddButton
             // 
-            this.PromptPlayRadio.AutoSize = true;
-            this.PromptPlayRadio.Location = new System.Drawing.Point(6, 73);
-            this.PromptPlayRadio.Name = "PromptPlayRadio";
-            this.PromptPlayRadio.Size = new System.Drawing.Size(280, 17);
-            this.PromptPlayRadio.TabIndex = 1;
-            this.PromptPlayRadio.Text = "Ask whether to play it when the part program is loaded";
-            this.PromptPlayRadio.UseVisualStyleBackColor = true;
-            // 
-            // NoPlayRadio
-            // 
-            this.NoPlayRadio.AutoSize = true;
-            this.NoPlayRadio.Location = new System.Drawing.Point(6, 115);
-            this.NoPlayRadio.Name = "NoPlayRadio";
-            this.NoPlayRadio.Size = new System.Drawing.Size(311, 17);
-            this.NoPlayRadio.TabIndex = 2;
-            this.NoPlayRadio.Text = "Do not play any setup video when the part program is loaded";
-            this.NoPlayRadio.UseVisualStyleBackColor = true;
+            this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddButton.Location = new System.Drawing.Point(528, 281);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(80, 52);
+            this.AddButton.TabIndex = 3;
+            this.AddButton.Text = "&Add";
+            this.AddButton.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -262,6 +301,7 @@
             this.AdvancedPage.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.ConfigurationPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -284,6 +324,9 @@
         private System.Windows.Forms.RadioButton NoPlayRadio;
         private System.Windows.Forms.RadioButton PromptPlayRadio;
         private System.Windows.Forms.RadioButton AutoPlayRadio;
+        private System.Windows.Forms.TabPage ConfigurationPage;
+        private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.TableLayoutPanel ConfigurationTable;
     }
 }
 

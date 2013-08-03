@@ -116,6 +116,28 @@ namespace BarcodeLoader
 
         }
 
+        /// <summary>Answers an <see cref="XElement"/> object based on this instance, suitable for a configuration file.
+        /// </summary>
+        /// <returns>An <see cref="XElement"/> based on this instance.</returns>
+        public XElement ToXElement()
+        {
+            XElement ret = new XElement("PartProgram");
+
+            ret.Add(new XAttribute("barcode", _barcode));
+            ret.Add(new XAttribute("programFilename", _programFilename));
+
+            if (_programPath != null) ret.Add(new XAttribute("programPath", _programPath));
+            if (_setupFilename != null) ret.Add(new XAttribute("setupFilename", _setupFilename));
+            if (_setupPath != null) ret.Add(new XAttribute("setupPath", _setupPath));
+            if (_thumbnailFilename != null) ret.Add(new XAttribute("thumbnailFilename", _thumbnailFilename));
+            if (_thumbnailPath != null) ret.Add(new XAttribute("thumbnailPath", _thumbnailPath));
+            if (_scheduleProgram) ret.Add(new XAttribute("schedule", _scheduleProgram));
+
+            if (_description != null) ret.Add(new XElement("description", _description));
+
+            return ret;
+        }
+
         /// <summary>Answers the part program filename.
         /// </summary>
         public string ProgramFilename { get { return _programFilename; } }
