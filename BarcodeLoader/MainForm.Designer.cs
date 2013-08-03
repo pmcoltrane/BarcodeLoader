@@ -38,6 +38,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.MultiplePanel = new System.Windows.Forms.Panel();
             this.MultipleLabel = new System.Windows.Forms.Label();
+            this.ConfigurationPage = new System.Windows.Forms.TabPage();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.ConfigurationTable = new System.Windows.Forms.TableLayoutPanel();
             this.AdvancedPage = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.NoPlayRadio = new System.Windows.Forms.RadioButton();
@@ -45,16 +48,13 @@
             this.AutoPlayRadio = new System.Windows.Forms.RadioButton();
             this.CaseSensitiveCheckBox = new System.Windows.Forms.CheckBox();
             this.AutoLoadCheckBox = new System.Windows.Forms.CheckBox();
-            this.ConfigurationPage = new System.Windows.Forms.TabPage();
-            this.ConfigurationTable = new System.Windows.Forms.TableLayoutPanel();
-            this.AddButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.BarcodePage.SuspendLayout();
             this.NonePanel.SuspendLayout();
             this.MultiplePanel.SuspendLayout();
+            this.ConfigurationPage.SuspendLayout();
             this.AdvancedPage.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.ConfigurationPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -168,6 +168,43 @@
             this.MultipleLabel.Text = "Multiple matches found.\r\nPlease scan or type a barcode to narrow the selection.";
             this.MultipleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // ConfigurationPage
+            // 
+            this.ConfigurationPage.Controls.Add(this.AddButton);
+            this.ConfigurationPage.Controls.Add(this.ConfigurationTable);
+            this.ConfigurationPage.Location = new System.Drawing.Point(4, 22);
+            this.ConfigurationPage.Name = "ConfigurationPage";
+            this.ConfigurationPage.Size = new System.Drawing.Size(616, 336);
+            this.ConfigurationPage.TabIndex = 2;
+            this.ConfigurationPage.Text = "Configuration";
+            this.ConfigurationPage.UseVisualStyleBackColor = true;
+            // 
+            // AddButton
+            // 
+            this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddButton.Location = new System.Drawing.Point(528, 281);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(80, 52);
+            this.AddButton.TabIndex = 3;
+            this.AddButton.Text = "&Add";
+            this.AddButton.UseVisualStyleBackColor = true;
+            // 
+            // ConfigurationTable
+            // 
+            this.ConfigurationTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.ConfigurationTable.AutoScroll = true;
+            this.ConfigurationTable.ColumnCount = 2;
+            this.ConfigurationTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.ConfigurationTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.ConfigurationTable.Location = new System.Drawing.Point(3, 3);
+            this.ConfigurationTable.Name = "ConfigurationTable";
+            this.ConfigurationTable.RowCount = 1;
+            this.ConfigurationTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.ConfigurationTable.Size = new System.Drawing.Size(610, 272);
+            this.ConfigurationTable.TabIndex = 0;
+            // 
             // AdvancedPage
             // 
             this.AdvancedPage.Controls.Add(this.groupBox1);
@@ -246,40 +283,6 @@
             this.AutoLoadCheckBox.Text = "Automatically load part program when selected (may cause undesirable behavior)";
             this.AutoLoadCheckBox.UseVisualStyleBackColor = true;
             // 
-            // ConfigurationPage
-            // 
-            this.ConfigurationPage.Controls.Add(this.AddButton);
-            this.ConfigurationPage.Controls.Add(this.ConfigurationTable);
-            this.ConfigurationPage.Location = new System.Drawing.Point(4, 22);
-            this.ConfigurationPage.Name = "ConfigurationPage";
-            this.ConfigurationPage.Size = new System.Drawing.Size(616, 336);
-            this.ConfigurationPage.TabIndex = 2;
-            this.ConfigurationPage.Text = "Configuration";
-            this.ConfigurationPage.UseVisualStyleBackColor = true;
-            // 
-            // ConfigurationTable
-            // 
-            this.ConfigurationTable.AutoScroll = true;
-            this.ConfigurationTable.ColumnCount = 2;
-            this.ConfigurationTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.ConfigurationTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.ConfigurationTable.Location = new System.Drawing.Point(3, 3);
-            this.ConfigurationTable.Name = "ConfigurationTable";
-            this.ConfigurationTable.RowCount = 1;
-            this.ConfigurationTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.ConfigurationTable.Size = new System.Drawing.Size(610, 272);
-            this.ConfigurationTable.TabIndex = 0;
-            // 
-            // AddButton
-            // 
-            this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddButton.Location = new System.Drawing.Point(528, 281);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(80, 52);
-            this.AddButton.TabIndex = 3;
-            this.AddButton.Text = "&Add";
-            this.AddButton.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             this.AcceptButton = this.LoadButton;
@@ -297,11 +300,11 @@
             this.BarcodePage.PerformLayout();
             this.NonePanel.ResumeLayout(false);
             this.MultiplePanel.ResumeLayout(false);
+            this.ConfigurationPage.ResumeLayout(false);
             this.AdvancedPage.ResumeLayout(false);
             this.AdvancedPage.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.ConfigurationPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

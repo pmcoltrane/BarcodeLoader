@@ -191,6 +191,28 @@ namespace BarcodeLoader
             }
         }
 
+        /// <summary>Populates the configuration list with part programs.
+        /// </summary>
+        /// <param name="programs"></param>
+        private void LoadPartProgramsIntoList(PartProgram[] programs)
+        {
+            foreach (PartProgram program in programs)
+            {
+                PartProgramBox box = new PartProgramBox();
+                box.PartProgram = program;
+                box.Dock = DockStyle.Fill;
+
+                Button delete = new Button();
+                delete.Text = "X";
+                delete.Dock = DockStyle.Fill;
+
+                ConfigurationTable.RowCount += 1;
+                ConfigurationTable.Controls.Add(box);
+                ConfigurationTable.Controls.Add(delete);
+
+            }
+        }
+
         public MainForm()
         {
             InitializeComponent();
@@ -212,6 +234,7 @@ namespace BarcodeLoader
         private void MainForm_Load(object sender, EventArgs e)
         {
             _partPrograms = PartProgram.FromFile("PartPrograms.xml");
+            LoadPartProgramsIntoList(_partPrograms);
         }
 
         private void MainForm_Shown(object sender, EventArgs e)
