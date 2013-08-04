@@ -83,6 +83,7 @@
             this.BarcodePage.TabIndex = 0;
             this.BarcodePage.Text = "Scan Barcode";
             this.BarcodePage.UseVisualStyleBackColor = true;
+            this.BarcodePage.GotFocus += this.BarcodePage_GotFocus;
             // 
             // PartProgramPanel
             // 
@@ -182,7 +183,7 @@
             // AddButton
             // 
             this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddButton.Location = new System.Drawing.Point(528, 281);
+            this.AddButton.Location = new System.Drawing.Point(533, 281);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(80, 52);
             this.AddButton.TabIndex = 3;
@@ -199,6 +200,7 @@
             this.ConfigurationTable.ColumnCount = 2;
             this.ConfigurationTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.ConfigurationTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.ConfigurationTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.ConfigurationTable.Location = new System.Drawing.Point(3, 3);
             this.ConfigurationTable.Name = "ConfigurationTable";
             this.ConfigurationTable.RowCount = 1;

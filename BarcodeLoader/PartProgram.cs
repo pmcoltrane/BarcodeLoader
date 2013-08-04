@@ -30,6 +30,26 @@ namespace BarcodeLoader
             return ret.ToArray();
         }
 
+        public static bool operator ==(PartProgram a, PartProgram b)
+        {
+            return !(a != b);
+        }
+
+        public static bool operator !=(PartProgram a, PartProgram b)
+        {
+            return a.Barcode == b.Barcode
+                && a.ProgramFilename == b.ProgramFilename
+                && a.ProgramPath == b.ProgramPath
+                && a.ThumbnailFilename == b.ThumbnailFilename
+                && a.ThumbnailPath == b.ThumbnailPath
+                && a.SetupFilename == b.SetupFilename
+                && a.SetupPath == b.SetupPath
+                && a.Description == b.Description
+                && a.ScheduleProgram == b.ScheduleProgram
+            ;
+
+        }
+
         #endregion
 
         #region Implementation

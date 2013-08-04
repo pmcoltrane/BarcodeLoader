@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace BarcodeLoader
 {
@@ -191,12 +192,29 @@ namespace BarcodeLoader
             }
         }
 
+        /// <summary>Saves the configured part programs back to the configuration file.
+        /// </summary>
+        /// <param name="programs">The programs to save to configuration .</param>
+        private void SavePartPrograms(PartProgram[] programs)
+        {
+            XDocument document = new XDocument();
+            document.Add(new XElement("PartPrograms"));
+
+            foreach (PartProgram program in programs)
+            {
+                document.Root.Add(program.ToXElement());
+            }
+
+            File.WriteAllText("PartPrograms.xml", document.ToString());
+        }
+
         /// <summary>Populates the configuration list with part programs.
         /// </summary>
         /// <param name="programs"></param>
         private void LoadPartProgramsIntoList(PartProgram[] programs)
         {
             ConfigurationTable.RowCount = 0;
+            ConfigurationTable.Controls.Clear();
 
             foreach (PartProgram program in programs)
             {
@@ -205,8 +223,10 @@ namespace BarcodeLoader
                 box.Dock = DockStyle.Fill;
 
                 Button delete = new Button();
-                delete.Text = "X";
+                delete.Text = "Remove";
                 delete.Dock = DockStyle.Fill;
+                delete.Tag = program;
+                delete.Click += PartProgramDeleteButton_Click;
 
                 ConfigurationTable.RowCount += 1;
                 ConfigurationTable.Controls.Add(box);
@@ -274,8 +294,30 @@ namespace BarcodeLoader
                 List<PartProgram> l = new List<PartProgram>(_partPrograms);
                 l.Add(form.PartProgram);
                 _partPrograms = l.ToArray();
+                SavePartPrograms(_partPrograms);
                 LoadPartProgramsIntoList(_partPrograms);
             }
         }
+
+        private void PartProgramDeleteButton_Click(object sender, EventArgs e)
+        {
+            PartProgram program = (PartProgram)((Button)sender).Tag;
+
+            if (MessageBox.Show(this, "Are you sure you want to remove:\n\nPart program: " + program.ProgramFilename + "\nBarcode: " + program.Barcode + "\n\nThis action cannot be undone.", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                List<PartProgram> l = new List<PartProgram>(_partPrograms);
+
+                l.Remove(program);
+                _partPrograms = l.ToArray();
+                SavePartPrograms(_partPrograms);
+                LoadPartProgramsIntoList(_partPrograms);
+            }
+        }
+
+        private void BarcodePage_GotFocus(object sender, EventArgs e)
+        {
+            BarcodeTextBox.Focus();
+        }
+
     }
 }
