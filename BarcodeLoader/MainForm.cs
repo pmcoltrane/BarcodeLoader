@@ -196,6 +196,8 @@ namespace BarcodeLoader
         /// <param name="programs"></param>
         private void LoadPartProgramsIntoList(PartProgram[] programs)
         {
+            ConfigurationTable.RowCount = 0;
+
             foreach (PartProgram program in programs)
             {
                 PartProgramBox box = new PartProgramBox();
@@ -262,6 +264,18 @@ namespace BarcodeLoader
         {
             _comparer = CaseSensitiveCheckBox.Checked ? StringComparer.Ordinal : StringComparer.OrdinalIgnoreCase;
             _comparison = CaseSensitiveCheckBox.Checked ? StringComparison.Ordinal : StringComparison.OrdinalIgnoreCase;
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            PartProgramForm form = new PartProgramForm();
+            if (form.ShowDialog(this) == DialogResult.OK)
+            {
+                List<PartProgram> l = new List<PartProgram>(_partPrograms);
+                l.Add(form.PartProgram);
+                _partPrograms = l.ToArray();
+                LoadPartProgramsIntoList(_partPrograms);
+            }
         }
     }
 }

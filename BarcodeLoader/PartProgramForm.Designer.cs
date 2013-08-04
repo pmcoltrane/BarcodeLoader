@@ -53,7 +53,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(256, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Barcode (hint: select this box and scan the barcode):";
+            this.label1.Text = "&Barcode (hint: select this box and scan the barcode):";
             // 
             // BarcodeTextBox
             // 
@@ -64,11 +64,13 @@
             this.BarcodeTextBox.Name = "BarcodeTextBox";
             this.BarcodeTextBox.Size = new System.Drawing.Size(511, 38);
             this.BarcodeTextBox.TabIndex = 2;
+            this.BarcodeTextBox.Validating += BarcodeTextBox_Validating;
             // 
             // ProgramFileDialog
             // 
             this.ProgramFileDialog.DefaultExt = "MIN";
             this.ProgramFileDialog.Filter = "MIN Files (*.MIN)|*.MIN|All Files (*)|*";
+            this.ProgramFileDialog.Title = "Choose a Part Program";
             // 
             // ProgramLabel
             // 
@@ -112,8 +114,9 @@
             this.ProgramButton.Name = "ProgramButton";
             this.ProgramButton.Size = new System.Drawing.Size(160, 52);
             this.ProgramButton.TabIndex = 7;
-            this.ProgramButton.Text = "Choose &Program";
+            this.ProgramButton.Text = "Choose &Program...";
             this.ProgramButton.UseVisualStyleBackColor = true;
+            this.ProgramButton.Click += new System.EventHandler(this.ProgramButton_Click);
             // 
             // ThumbnailButton
             // 
@@ -121,8 +124,9 @@
             this.ThumbnailButton.Name = "ThumbnailButton";
             this.ThumbnailButton.Size = new System.Drawing.Size(160, 52);
             this.ThumbnailButton.TabIndex = 8;
-            this.ThumbnailButton.Text = "&Thumbnail Image";
+            this.ThumbnailButton.Text = "&Thumbnail Image...";
             this.ThumbnailButton.UseVisualStyleBackColor = true;
+            this.ThumbnailButton.Click += new System.EventHandler(this.ThumbnailButton_Click);
             // 
             // SetupButton
             // 
@@ -130,8 +134,9 @@
             this.SetupButton.Name = "SetupButton";
             this.SetupButton.Size = new System.Drawing.Size(160, 52);
             this.SetupButton.TabIndex = 9;
-            this.SetupButton.Text = "Setup File";
+            this.SetupButton.Text = "Setup &File...";
             this.SetupButton.UseVisualStyleBackColor = true;
+            this.SetupButton.Click += new System.EventHandler(this.SetupButton_Click);
             // 
             // ThumbnailLabel
             // 
@@ -166,7 +171,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 12;
-            this.label2.Text = "Description:";
+            this.label2.Text = "&Description:";
             // 
             // DescriptionTextBox
             // 
@@ -179,6 +184,7 @@
             this.DescriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.DescriptionTextBox.Size = new System.Drawing.Size(514, 83);
             this.DescriptionTextBox.TabIndex = 13;
+            this.DescriptionTextBox.Validating += this.DescriptionTextBox_Validating;
             // 
             // ScheduleProgramCheckBox
             // 
@@ -189,12 +195,18 @@
             this.ScheduleProgramCheckBox.TabIndex = 14;
             this.ScheduleProgramCheckBox.Text = "This is a schedule program";
             this.ScheduleProgramCheckBox.UseVisualStyleBackColor = true;
+            this.ScheduleProgramCheckBox.CheckedChanged += this.ScheduleProgramCheckBox_CheckedChanged;
             // 
             // ThumbnailFileDialog
             // 
             this.ThumbnailFileDialog.DefaultExt = "PNG";
             this.ThumbnailFileDialog.Filter = "PNG Files (*.PNG)|*.PNG|JPEG Files (*.JPG)|*.JPG|Bitmap Files (*.BMP)|*.BMP|All F" +
                 "iles (*)|*";
+            this.ThumbnailFileDialog.Title = "Choose a Thumbnail Image";
+            // 
+            // SetupFileDialog
+            // 
+            this.SetupFileDialog.Title = "Choose a Setup Video or File";
             // 
             // PartProgramForm
             // 

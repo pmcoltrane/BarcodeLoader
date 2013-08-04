@@ -36,8 +36,8 @@
             // 
             // ThumbnailPictureBox
             // 
-            this.ThumbnailPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ThumbnailPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.ThumbnailPictureBox.BackColor = System.Drawing.SystemColors.Window;
             this.ThumbnailPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ThumbnailPictureBox.Location = new System.Drawing.Point(0, 0);
@@ -49,24 +49,24 @@
             // 
             // NameLabel
             // 
-            this.NameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.NameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameLabel.Location = new System.Drawing.Point(106, 0);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(291, 23);
+            this.NameLabel.Size = new System.Drawing.Size(291, 30);
             this.NameLabel.TabIndex = 1;
             this.NameLabel.Text = "ABC.MIN";
             this.NameLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // DescriptionLabel
             // 
-            this.DescriptionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DescriptionLabel.Location = new System.Drawing.Point(108, 25);
+            this.DescriptionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.DescriptionLabel.Location = new System.Drawing.Point(108, 36);
             this.DescriptionLabel.Name = "DescriptionLabel";
-            this.DescriptionLabel.Size = new System.Drawing.Size(289, 47);
+            this.DescriptionLabel.Size = new System.Drawing.Size(289, 36);
             this.DescriptionLabel.TabIndex = 2;
             this.DescriptionLabel.Text = "The quick brown fox jumps over the lazy dog.";
             this.DescriptionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
