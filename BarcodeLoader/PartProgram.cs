@@ -116,6 +116,12 @@ namespace BarcodeLoader
 
         }
 
+        /// <summary>Internal constructor
+        /// </summary>
+        internal PartProgram()
+        {
+        }
+
         /// <summary>Answers an <see cref="XElement"/> object based on this instance, suitable for a configuration file.
         /// </summary>
         /// <returns>An <see cref="XElement"/> based on this instance.</returns>
@@ -140,39 +146,39 @@ namespace BarcodeLoader
 
         /// <summary>Answers the part program filename.
         /// </summary>
-        public string ProgramFilename { get { return _programFilename; } }
+        public string ProgramFilename { get { return _programFilename; } set { _programFilename = value; } }
 
         /// <summary>Answers the part program file path.
         /// </summary>
-        public string ProgramPath { get { return _programPath; } }
+        public string ProgramPath { get { return _programPath; } set { _programPath = value; } }
 
         /// <summary>Answers the setup video filename.
         /// </summary>
-        public string SetupFilename { get { return _setupFilename; } }
+        public string SetupFilename { get { return _setupFilename; } set { _setupFilename = value; } }
 
         /// <summary>Answers the setup video file path.
         /// </summary>
-        public string SetupPath { get { return _setupPath; } }
+        public string SetupPath { get { return _setupPath; } set { _setupPath = value; } }
 
         /// <summary>Answers the part program thumbnail image filename.
         /// </summary>
-        public string ThumbnailFilename { get { return _thumbnailFilename; } }
+        public string ThumbnailFilename { get { return _thumbnailFilename; } set { _thumbnailFilename = value; } }
 
         /// <summary>Answers the part program thumbnail image file path.
         /// </summary>
-        public string ThumbnailPath { get { return _thumbnailPath; } }
+        public string ThumbnailPath { get { return _thumbnailPath; } set { _thumbnailPath = value; } }
 
         /// <summary>Answers the description of the part program.
         /// </summary>
-        public string Description { get { return _description; } }
+        public string Description { get { return _description; } set { _description = value; } }
 
         /// <summary>Answers the barcode text to match.
         /// </summary>
-        public string Barcode { get { return _barcode; } }
+        public string Barcode { get { return _barcode; } set { _barcode = value; } }
 
         /// <summary>Answers whether this is a schedule program.
         /// </summary>
-        public bool ScheduleProgram { get { return _scheduleProgram; } }
+        public bool ScheduleProgram { get { return _scheduleProgram; } set { _scheduleProgram = value; } }
 
         #endregion
 

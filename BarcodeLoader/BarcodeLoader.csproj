@@ -74,6 +74,12 @@
     <Compile Include="PartProgramBox.Designer.cs">
       <DependentUpon>PartProgramBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="PartProgramForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartProgramForm.Designer.cs">
+      <DependentUpon>PartProgramForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestProgram.cs" />
@@ -82,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PartProgramBox.resx">
       <DependentUpon>PartProgramBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PartProgramForm.resx">
+      <DependentUpon>PartProgramForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

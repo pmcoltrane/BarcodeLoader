@@ -8,6 +8,7 @@ namespace BarcodeLoader
 {
     class TestProgram : IProgram
     {
+
         public void SelectMainProgram(string filename)
         {
             MessageBox.Show("Loaded part program from \"" + filename + "\".");
