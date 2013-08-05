@@ -32,11 +32,6 @@ namespace BarcodeLoader
 
         public static bool operator ==(PartProgram a, PartProgram b)
         {
-            return !(a != b);
-        }
-
-        public static bool operator !=(PartProgram a, PartProgram b)
-        {
             return a.Barcode == b.Barcode
                 && a.ProgramFilename == b.ProgramFilename
                 && a.ProgramPath == b.ProgramPath
@@ -47,6 +42,13 @@ namespace BarcodeLoader
                 && a.Description == b.Description
                 && a.ScheduleProgram == b.ScheduleProgram
             ;
+            
+
+        }
+
+        public static bool operator !=(PartProgram a, PartProgram b)
+        {
+            return !(a == b);
 
         }
 
