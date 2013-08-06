@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace BarcodeLoader
 {
-    public class PartProgram
+    public class PartProgram : IEquatable<PartProgram> 
     {
 
         #region Static Interface
@@ -30,26 +30,21 @@ namespace BarcodeLoader
             return ret.ToArray();
         }
 
-        public static bool operator ==(PartProgram a, PartProgram b)
+        public static bool operator ==(PartProgram lhs, PartProgram rhs)
         {
-            return a.Barcode == b.Barcode
-                && a.ProgramFilename == b.ProgramFilename
-                && a.ProgramPath == b.ProgramPath
-                && a.ThumbnailFilename == b.ThumbnailFilename
-                && a.ThumbnailPath == b.ThumbnailPath
-                && a.SetupFilename == b.SetupFilename
-                && a.SetupPath == b.SetupPath
-                && a.Description == b.Description
-                && a.ScheduleProgram == b.ScheduleProgram
-            ;
-            
-
+            if (Object.ReferenceEquals(lhs, null))
+            {
+                return Object.ReferenceEquals(rhs, null);
+            }
+            else
+            {
+                return lhs.Equals(rhs);
+            }
         }
 
-        public static bool operator !=(PartProgram a, PartProgram b)
+        public static bool operator !=(PartProgram lhs, PartProgram rhs)
         {
-            return !(a == b);
-
+            return !(lhs == rhs);
         }
 
         #endregion
@@ -202,7 +197,44 @@ namespace BarcodeLoader
         /// </summary>
         public bool ScheduleProgram { get { return _scheduleProgram; } set { _scheduleProgram = value; } }
 
+        public override bool Equals(object obj)
+        {
+            return this.Equals(obj as PartProgram);
+        }
+
+        public bool Equals(PartProgram other)
+        {
+            if (other == null) return false;
+
+            return this.Barcode == other.Barcode
+                && this.ProgramFilename == other.ProgramFilename
+                && this.ProgramPath == other.ProgramPath
+                && this.ThumbnailFilename == other.ThumbnailFilename
+                && this.ThumbnailPath == other.ThumbnailPath
+                && this.SetupFilename == other.SetupFilename
+                && this.SetupPath == other.SetupPath
+                && this.Description == other.Description
+                && this.ScheduleProgram == other.ScheduleProgram
+            ;
+        }
+
+        public override int GetHashCode()
+        {
+            return (this.Barcode ?? "").GetHashCode()
+                ^ (this.ProgramFilename ?? "").GetHashCode()
+                ^ (this.ProgramPath ?? "").GetHashCode()
+                ^ (this.ThumbnailFilename ?? "").GetHashCode()
+                ^ (this.ThumbnailPath ?? "").GetHashCode()
+                ^ (this.SetupFilename ?? "").GetHashCode()
+                ^ (this.SetupPath ?? "").GetHashCode()
+                ^ (this.Description ?? "").GetHashCode()
+                ^ (this.ScheduleProgram).GetHashCode()
+            ;
+        }
+
         #endregion
+
+
 
     }
 }

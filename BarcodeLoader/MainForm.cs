@@ -83,6 +83,7 @@ namespace BarcodeLoader
             MultiplePanel.Visible = false;
             LoadButton.Enabled = true;
 
+            if (program == _currentPartProgram) return;
             _currentPartProgram = program;
 
             PartProgramPanel.Controls.Clear();
