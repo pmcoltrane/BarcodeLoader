@@ -39,6 +39,8 @@ namespace BarcodeLoader
 
             NameLabel.Text = _partProgram.ProgramFilename + "  [" + _partProgram.Barcode + "]";
             DescriptionLabel.Text = _partProgram.Description ?? "-- NO DESCRIPTION AVAILABLE --";
+            ToolTipper.SetToolTip(NameLabel, Path.Combine(_partProgram.ProgramPath ?? "", _partProgram.ProgramFilename ?? "") + "  [" + _partProgram.Barcode + "]");
+            ToolTipper.SetToolTip(DescriptionLabel, DescriptionLabel.Text);
 
             Reflow();
         }

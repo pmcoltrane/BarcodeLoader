@@ -18,5 +18,14 @@ namespace BarcodeLoader
         {
             MessageBox.Show("Loaded schedule program from \"" + filename + "\".");
         }
+
+
+        public string DefaultPath
+        {
+            get
+            {
+                return Environment.CurrentDirectory;
+            }
+        }
     }
 }

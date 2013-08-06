@@ -1,4 +1,5 @@
 ﻿using Okuma.CLCMDAPI.CommandAPI;
+using DataApi = Okuma.CLDATAPI.DataAPI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +11,17 @@ namespace BarcodeLoader
     {
 
         private CProgram _program;
+        private string _defaultPath;
 
         public LatheProgram()
         {
             _program = new CProgram();
+
+            DataApi.CMachine machine = new DataApi.CMachine();
+            machine.Init();
+
+            DataApi.CProgram prog = new DataApi.CProgram();
+            _defaultPath = prog.GetDefaultProgramPath();
         }
 
         public void SelectMainProgram(string filename)
@@ -24,6 +32,15 @@ namespace BarcodeLoader
         public void SelectScheduleProgram(string filename)
         {
             _program.SelectScheduleProgram(filename);
+        }
+
+
+        public string DefaultPath
+        {
+            get
+            {
+                return _defaultPath;
+            }
         }
     }
 }

@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ThumbnailPictureBox = new System.Windows.Forms.PictureBox();
             this.NameLabel = new System.Windows.Forms.Label();
             this.DescriptionLabel = new System.Windows.Forms.Label();
+            this.ToolTipper = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ThumbnailPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,5 +94,6 @@
         private System.Windows.Forms.PictureBox ThumbnailPictureBox;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Label DescriptionLabel;
+        private System.Windows.Forms.ToolTip ToolTipper;
     }
 }

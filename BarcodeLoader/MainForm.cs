@@ -136,7 +136,7 @@ namespace BarcodeLoader
 
             try
             {
-                string path = Path.Combine(program.ProgramPath ?? "", program.ProgramFilename ?? "");
+                string path = Path.Combine(program.ProgramPath ?? _program.DefaultPath, program.ProgramFilename ?? "");
                 //FIXME: default to D:\MD1 (or default path from IProgram) if path not specified
                 //FIXME: if file not in D:\MD1, copy with appropriate prompting or other configurable action
                 if (program.ScheduleProgram)

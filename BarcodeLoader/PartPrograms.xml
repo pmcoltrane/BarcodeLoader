@@ -3,7 +3,6 @@
   <PartProgram
     barcode="abcd1234"
     programFilename="ABC.MIN"
-    programPath="D:\MD1"
     setupFilename="Wildlife.wmv"
     thumbnailFilename="Koala.jpg"
   >

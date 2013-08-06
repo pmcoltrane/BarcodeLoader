@@ -23,5 +23,9 @@ namespace BarcodeLoader
         /// <remarks>Filename must be in the default D:\MD1 directory.</remarks>
         void SelectScheduleProgram(string filename);
 
+        /// <summary>Answers a default path to use if none is provided.
+        /// </summary>
+        /// <returns>A default path to use if no path is provided.</returns>
+        string DefaultPath { get; }
     }
 }
