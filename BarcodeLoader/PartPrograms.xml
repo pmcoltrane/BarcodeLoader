@@ -5,9 +5,10 @@
     programFilename="ABC.MIN"
     programPath="D:\MD1"
     setupFilename="Wildlife.wmv"
-    thumbnailFilename="ABC.MIN.png"
-    thumbnailPath="D:\MD1"
-    />
+    thumbnailFilename="Koala.jpg"
+  >
+    <Description>I don't have a good machining image. So here's a picture of a koala taken from the Windows sample pictures. This description is intentionally long to see how it will appear.</Description>
+  </PartProgram >
   <PartProgram
   barcode="abba"
   programFilename="ABBA.MIN">

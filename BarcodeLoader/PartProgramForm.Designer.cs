@@ -57,14 +57,13 @@
             // 
             // BarcodeTextBox
             // 
-            this.BarcodeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.BarcodeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BarcodeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BarcodeTextBox.Location = new System.Drawing.Point(15, 25);
             this.BarcodeTextBox.Name = "BarcodeTextBox";
             this.BarcodeTextBox.Size = new System.Drawing.Size(511, 38);
             this.BarcodeTextBox.TabIndex = 2;
-            this.BarcodeTextBox.Validating += BarcodeTextBox_Validating;
             // 
             // ProgramFileDialog
             // 
@@ -74,15 +73,14 @@
             // 
             // ProgramLabel
             // 
-            this.ProgramLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.ProgramLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ProgramLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ProgramLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProgramLabel.Location = new System.Drawing.Point(178, 69);
             this.ProgramLabel.Name = "ProgramLabel";
             this.ProgramLabel.Size = new System.Drawing.Size(348, 52);
             this.ProgramLabel.TabIndex = 4;
-            this.ProgramLabel.Text = "ABC.MIN";
             this.ProgramLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // SaveButton
@@ -140,28 +138,26 @@
             // 
             // ThumbnailLabel
             // 
-            this.ThumbnailLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.ThumbnailLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ThumbnailLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ThumbnailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ThumbnailLabel.Location = new System.Drawing.Point(178, 127);
             this.ThumbnailLabel.Name = "ThumbnailLabel";
             this.ThumbnailLabel.Size = new System.Drawing.Size(348, 52);
             this.ThumbnailLabel.TabIndex = 10;
-            this.ThumbnailLabel.Text = "ABC.MIN.PNG";
             this.ThumbnailLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // SetupLabel
             // 
-            this.SetupLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.SetupLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.SetupLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SetupLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SetupLabel.Location = new System.Drawing.Point(178, 185);
             this.SetupLabel.Name = "SetupLabel";
             this.SetupLabel.Size = new System.Drawing.Size(348, 52);
             this.SetupLabel.TabIndex = 11;
-            this.SetupLabel.Text = "ABC.MIN.MPG";
             this.SetupLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
@@ -175,16 +171,15 @@
             // 
             // DescriptionTextBox
             // 
-            this.DescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.DescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DescriptionTextBox.Location = new System.Drawing.Point(12, 266);
             this.DescriptionTextBox.Multiline = true;
             this.DescriptionTextBox.Name = "DescriptionTextBox";
             this.DescriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.DescriptionTextBox.Size = new System.Drawing.Size(514, 83);
             this.DescriptionTextBox.TabIndex = 13;
-            this.DescriptionTextBox.Validating += this.DescriptionTextBox_Validating;
             // 
             // ScheduleProgramCheckBox
             // 
@@ -195,13 +190,12 @@
             this.ScheduleProgramCheckBox.TabIndex = 14;
             this.ScheduleProgramCheckBox.Text = "This is a schedule program";
             this.ScheduleProgramCheckBox.UseVisualStyleBackColor = true;
-            this.ScheduleProgramCheckBox.CheckedChanged += this.ScheduleProgramCheckBox_CheckedChanged;
             // 
             // ThumbnailFileDialog
             // 
             this.ThumbnailFileDialog.DefaultExt = "PNG";
             this.ThumbnailFileDialog.Filter = "PNG Files (*.PNG)|*.PNG|JPEG Files (*.JPG)|*.JPG|Bitmap Files (*.BMP)|*.BMP|All F" +
-                "iles (*)|*";
+    "iles (*)|*";
             this.ThumbnailFileDialog.Title = "Choose a Thumbnail Image";
             // 
             // SetupFileDialog

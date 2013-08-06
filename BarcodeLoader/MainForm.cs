@@ -233,6 +233,8 @@ namespace BarcodeLoader
                 ConfigurationTable.Controls.Add(delete);
 
             }
+
+            ConfigurationTable.RowCount += 1;
         }
 
         public MainForm()
